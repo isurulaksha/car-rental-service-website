@@ -143,6 +143,26 @@ header {
     cursor: pointer;
 }
 
+.app-store-link {
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.app-store-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.app-store-link img {
+    transition: filter 0.3s ease;
+}
+
+.app-store-link:hover img {
+    filter: brightness(1.1);
+}
+
 /* Form */
 .form-container form {
     display: flex;
@@ -231,6 +251,380 @@ header {
 .ride-container .box .bx:hover {
     background: var(--gradient);
     color: #fff;
+}
+
+.location-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #fe5b3d 0%, #ffac38 100%);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(254, 91, 61, 0.3);
+}
+
+.location-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(254, 91, 61, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+.location-btn i {
+    font-size: 16px;
+}
+
+.calendar-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #474fa0 0%, #855cdc 100%);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(71, 79, 160, 0.3);
+}
+
+.calendar-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(71, 79, 160, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+.calendar-btn i {
+    font-size: 16px;
+}
+
+.document-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+    cursor: pointer;
+}
+
+.document-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+.document-btn i {
+    font-size: 16px;
+}
+
+/* Learn More Modal Styles */
+.learn-more-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.3s ease;
+}
+
+.learn-more-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 1000px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideIn 0.3s ease;
+}
+
+.close-learn-more {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+.close-learn-more:hover {
+    color: #fe5b3d;
+}
+
+.learn-more-content h2 {
+    text-align: center;
+    color: #fe5b3d;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    border-bottom: 3px solid #ffac38;
+    padding-bottom: 15px;
+}
+
+.learn-more-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.learn-more-item {
+    text-align: center;
+    padding: 25px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 1px solid #dee2e6;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.learn-more-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.learn-more-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #fe5b3d 0%, #ffac38 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.learn-more-icon i {
+    font-size: 35px;
+    color: white;
+}
+
+.learn-more-item h3 {
+    color: #474fa0;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.learn-more-item p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.learn-more-footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #dee2e6;
+}
+
+.learn-more-footer .btn {
+    background: linear-gradient(135deg, #fe5b3d 0%, #ffac38 100%);
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.learn-more-footer .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(254, 91, 61, 0.3);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    .learn-more-content {
+        margin: 10% auto;
+        padding: 20px;
+        width: 95%;
+    }
+    
+    .learn-more-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .learn-more-item {
+        padding: 20px;
+    }
+    
+    .learn-more-content h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Car Detail Page Button Styles */
+.back-to-listings-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #474fa0 0%, #855cdc 100%);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(71, 79, 160, 0.3);
+    border: none;
+    cursor: pointer;
+}
+
+.back-to-listings-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(71, 79, 160, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+.back-to-listings-btn i {
+    font-size: 18px;
+}
+
+.book-now-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #fe5b3d 0%, #ffac38 100%);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 25px;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(254, 91, 61, 0.3);
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.book-now-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(254, 91, 61, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+.book-now-btn i {
+    font-size: 20px;
+}
+
+/* Car Detail Page Container Styling */
+#car-detail-page {
+    padding: 40px 0;
+}
+
+#car-detail-page .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+#car-detail-page h1 {
+    color: #fe5b3d;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+#car-detail-page h3 {
+    color: #474fa0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+#car-detail-page p {
+    color: #666;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+#car-detail-page ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+#car-detail-page ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    color: #555;
+    font-size: 1rem;
+}
+
+#car-detail-page ul li:before {
+    content: "✓ ";
+    color: #28a745;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#car-detail-page img {
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .back-to-listings-btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    .book-now-btn {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+    
+    #car-detail-page h1 {
+        font-size: 2rem;
+    }
+    
+    #car-detail-page h3 {
+        font-size: 1.5rem;
+    }
 }
 
 /* Services Section */
@@ -561,4 +955,4 @@ header .navbar {
     .services-container{
         grid-template-columns: repeat(auto-fit, minmax(254px, auto));
     }
-}
+    
