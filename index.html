@@ -25,7 +25,7 @@
         </ul>
         <div class="header-btn">
             <a href="#" class="sign-up">Sign Up</a>
-            <a href="#" class="sign-in">Sign In</a>
+            <a href="login.html" class="sign-in">Sign In</a>
         </div>
     </header>
     
@@ -40,8 +40,12 @@
                 we make your journey <br>smooth and memorable.Let us help you hit the road with confidence <br>rent your car today!
             </p>
             <div class="app-stores">
-                <img src="img/ios.png" alt="iOS App">
-                <img src="img/512x512.png" alt="Android App">
+                <a href="https://apps.apple.com/app/rideon-car-rental/id1234567890" target="_blank" class="app-store-link">
+                    <img src="img/ios.png" alt="iOS App">
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.rideon.carrental" target="_blank" class="app-store-link">
+                    <img src="img/512x512.png" alt="Android App">
+                </a>
             </div>
         </div>
         <br><br>
@@ -77,16 +81,28 @@
                 <i class="bx bx-map"></i>
                 <h2>Choose a Location</h2>
                 <p>Select your preferred location to start your journey.</p>
+                <a href="https://www.google.com/maps" target="_blank" class="location-btn">
+                    <i class="bx bx-map-pin"></i>
+                    Open Google Maps
+                </a>
             </div>
             <div class="box">
                 <i class="bx bx-calendar-check"></i>
                 <h2>Pick-Up Date</h2>
                 <p>Choose your desired pick-up date to book your car.</p>
+                <a href="https://calendar.google.com" target="_blank" class="calendar-btn">
+                    <i class="bx bx-calendar"></i>
+                    Open Google Calendar
+                </a>
             </div>
             <div class="box">
                 <i class="bx bx-calendar-star"></i>
                 <h2>Book a Car</h2>
                 <p>Finalize your booking and get ready for an adventure!</p>
+                <a href="documents/rideon-service-guide.html" target="_blank" class="document-btn">
+                    <i class="bx bx-file-pdf"></i>
+                    View Service Guide
+                </a>
             </div>
         </div>
     </section>
@@ -96,11 +112,11 @@
     
     <!-- Services -->
     <section class="services" id="service">
-        <div class="heading">
+        <div class="heading main-heading">
             <span>Best Services</span>
             <h1>Explore Our Top Deals<br>From Top-Rated Dealers</h1>
         </div>
-        <div class="services-container">
+        <div class="services-container" id="car-listings">
             <div class="box">
                 <div class="box-img">
                     <img src="img/car1.jpg" alt="Car">
@@ -108,7 +124,7 @@
                 <p>2017</p>
                 <h3>Honda Civic</h3>
                 <h2>LKR 8,500 | LKR 255,000 <span>/month</span></h2>
-                <a href="#" class="btn">Rent Now</a>
+                <a href="#" class="btn" onclick="showCarDetail(0)">Rent Now</a>
             </div>
 
             <div class="box">
@@ -118,7 +134,7 @@
                 <p>2018</p>
                 <h3>Axio Hybrid</h3>
                 <h2>LKR 7,850 | LKR 235,500 <span>/month</span></h2>
-                <a href="#" class="btn">Rent Now</a>
+                <a href="#" class="btn" onclick="showCarDetail(1)">Rent Now</a>
             </div>
 
             <div class="box">
@@ -128,7 +144,7 @@
                 <p>2019</p>
                 <h3>Land Cruiser V8</h3>
                 <h2>LKR 45,000 | LKR 1,350,000 <span>/month</span></h2>
-                <a href="#" class="btn">Rent Now</a>
+                <a href="#" class="btn" onclick="showCarDetail(2)">Rent Now</a>
             </div>
 
             <div class="box">
@@ -138,7 +154,7 @@
                 <p>2020</p>
                 <h3>BMW X1</h3>
                 <h2>LKR 450,000 | LKR 13,500,000 <span>/month</span></h2>
-                <a href="#" class="btn">Rent Now</a>
+                <a href="#" class="btn" onclick="showCarDetail(3)">Rent Now</a>
             </div>
             <div class="box">
                 <div class="box-img">
@@ -147,7 +163,7 @@
                 <p>2021</p>
                 <h3>Hyundai Grand i10</h3>
                 <h2>LKR 10,000 | LKR 300,000 <span>/month</span></h2>
-                <a href="#" class="btn">Rent Now</a>
+                <a href="#" class="btn" onclick="showCarDetail(4)">Rent Now</a>
             </div>
 
             <div class="box">
@@ -157,7 +173,7 @@
                 <p>2022</p>
                 <h3>Toyota Prius</h3>
                 <h2>LKR 9,000 | LKR 270,000 <span>/month</span></h2>
-                <a href="#" class="btn">Rent Now</a>
+                <a href="#" class="btn" onclick="showCarDetail(5)">Rent Now</a>
             </div>
 
             <div class="box">
@@ -167,7 +183,7 @@
                 <p>2023</p>
                 <h3>Audi Q2</h3>
                 <h2>LKR 140,000 | LKR 4,200,000 <span>/month</span></h2>
-                <a href="#" class="btn">Rent Now</a>
+                <a href="#" class="btn" onclick="showCarDetail(6)">Rent Now</a>
             </div>
 
             <div class="box">
@@ -177,7 +193,29 @@
                 <p>2024</p>
                 <h3>Defender</h3>
                 <h2>LKR 350,000 | LKR 10,500,000 <span>/month</span></h2>
-                <a href="#" class="btn">Rent Now</a>
+                <a href="#" class="btn" onclick="showCarDetail(7)">Rent Now</a>
+            </div>
+        </div>
+        <!-- Car Detail Section (hidden by default, now full page) -->
+        <div id="car-detail-page" style="display:none; min-height:100vh; background:#fff;">
+            <div class="container py-5">
+                <a href="#service" class="back-to-listings-btn" onclick="hideCarDetail()">
+                    <i class="bx bx-arrow-back"></i> Back to Listings
+                </a>
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6">
+                        <img id="detail-img" src="" alt="Car" class="img-fluid rounded shadow" style="display:block; max-width:100%; height:auto;">
+                    </div>
+                    <div class="col-md-6">
+                        <h1 id="detail-title"></h1>
+                        <h3 class="text-success" id="detail-price"></h3>
+                        <p class="mt-3" id="detail-desc"></p>
+                        <ul id="detail-features"></ul>
+                        <a href="#" class="book-now-btn">
+                            <i class="bx bx-calendar-check"></i> Book Now
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -210,7 +248,45 @@
                 </ul>
                 <br>
                 <p>Join the RideOn family and make your next journey unforgettable. Wherever life takes you, we're here to help you get there!</p>
-                <a href="#" class="btn">Learn More</a>
+                <a href="#" class="btn" onclick="showLearnMore()">Learn More</a>
+            </div>
+        </div>
+        
+        <!-- Learn More Modal -->
+        <div id="learn-more-modal" class="learn-more-modal">
+            <div class="learn-more-content">
+                <span class="close-learn-more" onclick="hideLearnMore()">&times;</span>
+                <h2>Why Choose RideOn?</h2>
+                <div class="learn-more-grid">
+                    <div class="learn-more-item">
+                        <div class="learn-more-icon">
+                            <i class="bx bx-car"></i>
+                        </div>
+                        <h3>Diverse Fleet</h3>
+                        <p>We offer a comprehensive range of vehicles to suit every need and budget. From economical hatchbacks perfect for city driving to luxurious SUVs for family trips, and everything in between. Our fleet includes economy cars, luxury vehicles, family-sized SUVs, hybrid options, and premium brands like BMW and Audi. Whatever your journey requires, we have the perfect car for you.</p>
+                    </div>
+                    
+                    <div class="learn-more-item">
+                        <div class="learn-more-icon">
+                            <i class="bx bx-money"></i>
+                        </div>
+                        <h3>Competitive Pricing</h3>
+                        <p>We believe quality car rental should be affordable for everyone. Our pricing is transparent with no hidden fees, and we offer flexible rental plans including daily, weekly, and monthly options. We provide competitive rates starting from LKR 7,850 per day, with special discounts for longer rentals and seasonal promotions to help you save more on your journey.</p>
+                    </div>
+                    
+                    <div class="learn-more-item">
+                        <div class="learn-more-icon">
+                            <i class="bx bx-support"></i>
+                        </div>
+                        <h3>24/7 Support</h3>
+                        <p>Our customer support team is available around the clock to assist you with any questions or concerns. From the moment you start browsing our website to the completion of your rental, we're here to help. Our seamless online booking system makes it easy to reserve your car, and our 24/7 emergency support ensures you're never alone on the road.</p>
+                    </div>
+                </div>
+                <div class="learn-more-footer">
+                    <button onclick="hideLearnMore()" class="btn">Close</button>
+                </div>
+            </div>
+        </div>
             </div>
         </div>
     </section>
@@ -269,7 +345,54 @@
         </div>
         <p>We'd love to hear about your experience!</p>
         <div class="review-btn">
-            <a href="#" class="btn">Your Reviews</a>
+            <a href="#" class="btn" onclick="console.log('Button clicked!'); showReviewForm();">Your Reviews</a>
+        </div>
+        
+        <!-- Review Form Section (hidden by default) -->
+        <div id="review-form-page" style="display:none; min-height:100vh; background:#fff;">
+            <div class="container py-5">
+                <a href="#reviews" class="btn btn-link mb-4" onclick="hideReviewForm()">&larr; Back to Reviews</a>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card shadow p-4">
+                            <h2 class="text-center mb-4">Share Your Experience</h2>
+                            <form id="reviewForm">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="reviewerName" class="form-label">Your Name</label>
+                                        <input type="text" class="form-control" id="reviewerName" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="reviewerEmail" class="form-label">Your Email</label>
+                                        <input type="email" class="form-control" id="reviewerEmail" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="reviewRating" class="form-label">Rating</label>
+                                    <select class="form-select" id="reviewRating" required>
+                                        <option value="">Select rating</option>
+                                        <option value="5">⭐⭐⭐⭐⭐ Excellent (5 stars)</option>
+                                        <option value="4">⭐⭐⭐⭐ Very Good (4 stars)</option>
+                                        <option value="3">⭐⭐⭐ Good (3 stars)</option>
+                                        <option value="2">⭐⭐ Fair (2 stars)</option>
+                                        <option value="1">⭐ Poor (1 star)</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="reviewComment" class="form-label">Your Review</label>
+                                    <textarea class="form-control" id="reviewComment" rows="5" placeholder="Tell us about your experience with RideOn..." required></textarea>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary btn-lg">Submit Review</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -294,10 +417,583 @@
         </div>
     </footer>
 
+    <!-- Chatbot -->
+    <div id="chatbot-container">
+        <!-- Chat Button -->
+        <div id="chat-button" onclick="toggleChat()">
+            <i class="bx bx-message-rounded-dots"></i>
+            <span>Need Help?</span>
+        </div>
+        
+        <!-- Chat Window -->
+        <div id="chat-window" style="display: none;">
+            <div id="chat-header">
+                <h5><i class="bx bx-bot"></i> RideOn Assistant</h5>
+                <button onclick="toggleChat()" class="close-btn">
+                    <i class="bx bx-x"></i>
+                </button>
+            </div>
+            <div id="chat-messages">
+                <div class="message bot-message">
+                    <i class="bx bx-bot"></i>
+                    <div class="message-content">
+                        Hi! I'm your RideOn assistant. How can I help you today? 
+                        <br><br>
+                        <strong>Quick questions you can ask:</strong><br>
+                        • "What cars do you have?"<br>
+                        • "How much does it cost?"<br>
+                        • "What documents do I need?"<br>
+                        • "How do I book a car?"<br>
+                        • "What are your hours?"
+                    </div>
+                </div>
+            </div>
+            <div id="chat-input">
+                <input type="text" id="user-input" placeholder="Type your question..." onkeypress="handleKeyPress(event)">
+                <button onclick="sendMessage()">
+                    <i class="bx bx-send"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- ScrollReveal -->
     <script src="https://unpkg.com/scrollreveal"></script>
 
     <!-- Link To JS -->
     <script src="main.js"></script>
+    <script>
+    // Replace with your Google Apps Script Web App URL
+    const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL';
+    
+    // Car data for detail view
+    const carDetails = [
+      {
+        img: 'img/car1.jpg',
+        title: 'Honda Civic (2017)',
+        price: 'LKR 8,500 | LKR 255,000 <span class="fs-6">/month</span>',
+        desc: 'The 2017 Honda Civic offers a perfect blend of comfort, efficiency, and style. Ideal for city drives and long journeys, this car features a spacious interior, advanced safety features, and excellent fuel economy. Enjoy a smooth ride with RideOn\'s well-maintained fleet.',
+        features: [
+          'Transmission: Automatic',
+          'Fuel: Petrol',
+          'Seats: 5',
+          'Air Conditioning: Yes',
+          'Bluetooth & USB: Yes'
+        ]
+      },
+      {
+        img: 'img/axio.jpeg',
+        title: 'Axio Hybrid (2018)',
+        price: 'LKR 7,850 | LKR 235,500 <span class="fs-6">/month</span>',
+        desc: 'The 2018 Axio Hybrid is renowned for its fuel efficiency and eco-friendly performance. With a comfortable cabin, advanced hybrid technology, and smooth handling, it\'s perfect for both city and highway driving. Rent this reliable hybrid for your next journey!',
+        features: [
+          'Transmission: Automatic',
+          'Fuel: Hybrid',
+          'Seats: 5',
+          'Air Conditioning: Yes',
+          'Bluetooth & USB: Yes'
+        ]
+      },
+      {
+        img: 'img/v8 2018.jpg',
+        title: 'Land Cruiser V8 (2019)',
+        price: 'LKR 45,000 | LKR 1,350,000 <span class="fs-6">/month</span>',
+        desc: 'The 2019 Land Cruiser V8 is the epitome of luxury and power. With a robust engine, premium interior, and advanced off-road capabilities, this SUV is perfect for both city and adventure trips. Experience unmatched comfort and performance with RideOn.',
+        features: [
+          'Transmission: Automatic',
+          'Fuel: Petrol',
+          'Seats: 7',
+          'Air Conditioning: Yes',
+          'Bluetooth & USB: Yes'
+        ]
+      },
+      {
+        img: 'img/Bmw 2020.jpg',
+        title: 'BMW X1 (2020)',
+        price: 'LKR 450,000 | LKR 13,500,000 <span class="fs-6">/month</span>',
+        desc: 'The 2020 BMW X1 is a luxury compact SUV that combines sporty performance with elegant design. Enjoy a premium driving experience, advanced technology, and top-notch safety features. Perfect for those who demand style and substance in every journey.',
+        features: [
+          'Transmission: Automatic',
+          'Fuel: Petrol',
+          'Seats: 5',
+          'Air Conditioning: Yes',
+          'Bluetooth & USB: Yes'
+        ]
+      },
+      {
+        img: 'img/hyudi.jpg',
+        title: 'Hyundai Grand i10 (2021)',
+        price: 'LKR 10,000 | LKR 300,000 <span class="fs-6">/month</span>',
+        desc: 'The 2021 Hyundai Grand i10 is a compact hatchback that offers great value, comfort, and efficiency. With its modern design, spacious interior, and advanced features, it\'s perfect for city commutes and weekend getaways. Rent this versatile car for a smooth ride!',
+        features: [
+          'Transmission: Automatic',
+          'Fuel: Petrol',
+          'Seats: 5',
+          'Air Conditioning: Yes',
+          'Bluetooth & USB: Yes'
+        ]
+      },
+      {
+        img: 'img/prius 2020.jpg',
+        title: 'Toyota Prius (2022)',
+        price: 'LKR 9,000 | LKR 270,000 <span class="fs-6">/month</span>',
+        desc: 'The 2022 Toyota Prius is a leader in hybrid technology, offering outstanding fuel efficiency and a comfortable ride. With its eco-friendly design, spacious interior, and advanced safety features, the Prius is ideal for both city and long-distance travel.',
+        features: [
+          'Transmission: Automatic',
+          'Fuel: Hybrid',
+          'Seats: 5',
+          'Air Conditioning: Yes',
+          'Bluetooth & USB: Yes'
+        ]
+      },
+      {
+        img: 'img/aq2.jpg',
+        title: 'Audi Q2 (2023)',
+        price: 'LKR 140,000 | LKR 4,200,000 <span class="fs-6">/month</span>',
+        desc: 'The 2023 Audi Q2 is a stylish and compact SUV with advanced features, sporty handling, and a premium interior. Perfect for those who want luxury and practicality in one package.',
+        features: [
+          'Transmission: Automatic',
+          'Fuel: Petrol',
+          'Seats: 5',
+          'Air Conditioning: Yes',
+          'Bluetooth & USB: Yes'
+        ]
+      },
+      {
+        img: 'img/defender.jpg',
+        title: 'Defender (2024)',
+        price: 'LKR 350,000 | LKR 10,500,000 <span class="fs-6">/month</span>',
+        desc: 'The 2024 Defender is built for adventure, offering rugged durability, advanced off-road capabilities, and a comfortable interior. Take on any journey with confidence in this iconic SUV.',
+        features: [
+          'Transmission: Automatic',
+          'Fuel: Petrol',
+          'Seats: 7',
+          'Air Conditioning: Yes',
+          'Bluetooth & USB: Yes'
+        ]
+      }
+    ];
+
+    function showCarDetail(index) {
+      // Hide all main content except car detail
+      document.querySelectorAll('header, .home, .ride, .main-heading, #car-listings, .about, .reviews, .newsletter, footer').forEach(el => {
+        if (el) el.style.display = 'none';
+      });
+      document.getElementById('car-detail-page').style.display = 'block';
+      document.body.style.overflow = '';
+      const car = carDetails[index];
+      document.getElementById('detail-img').src = car.img;
+      document.getElementById('detail-img').style.display = 'block';
+      document.getElementById('detail-title').innerHTML = car.title;
+      document.getElementById('detail-price').innerHTML = car.price;
+      document.getElementById('detail-desc').innerHTML = car.desc;
+      const featuresList = document.getElementById('detail-features');
+      featuresList.innerHTML = '';
+      car.features.forEach(f => {
+        const li = document.createElement('li');
+        li.textContent = f;
+        featuresList.appendChild(li);
+      });
+    }
+    
+    function hideCarDetail() {
+      // Show all main content, hide car detail
+      document.querySelectorAll('header, .home, .ride, .main-heading, #car-listings, .about, .reviews, .newsletter, footer').forEach(el => {
+        if (el) el.style.display = '';
+      });
+      document.getElementById('car-detail-page').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+    
+    // Review form functions
+    function showReviewForm() {
+      console.log('showReviewForm function called'); // Debug log
+      
+      // Hide all main content except review form
+      const elementsToHide = document.querySelectorAll('header, .home, .ride, .main-heading, #car-listings, .about, .reviews, .newsletter, footer');
+      console.log('Elements to hide:', elementsToHide.length); // Debug log
+      
+      elementsToHide.forEach(el => {
+        if (el) {
+          el.style.display = 'none';
+          console.log('Hidden element:', el.tagName); // Debug log
+        }
+      });
+      
+      const reviewFormPage = document.getElementById('review-form-page');
+      console.log('Review form page found:', reviewFormPage); // Debug log
+      
+      if (reviewFormPage) {
+        reviewFormPage.style.display = 'block';
+        document.body.style.overflow = '';
+        console.log('Review form should now be visible'); // Debug log
+      } else {
+        console.error('Review form page not found!'); // Debug log
+      }
+    }
+    
+    function hideReviewForm() {
+      // Show all main content, hide review form
+      document.querySelectorAll('header, .home, .ride, .main-heading, #car-listings, .about, .reviews, .newsletter, footer').forEach(el => {
+        if (el) el.style.display = '';
+      });
+      document.getElementById('review-form-page').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+    
+    // Handle review form submission
+    document.addEventListener('DOMContentLoaded', function() {
+      const reviewForm = document.getElementById('reviewForm');
+      
+      if (reviewForm) {
+        reviewForm.addEventListener('submit', function(e) {
+          e.preventDefault();
+          
+          const name = document.getElementById('reviewerName').value;
+          const email = document.getElementById('reviewerEmail').value;
+          const rating = document.getElementById('reviewRating').value;
+          const comment = document.getElementById('reviewComment').value;
+          
+          // Show loading state
+          const submitBtn = reviewForm.querySelector('button[type="submit"]');
+          const originalText = submitBtn.innerHTML;
+          submitBtn.innerHTML = '<i class="bx bx-loader-alt bx-spin"></i> Submitting...';
+          submitBtn.disabled = true;
+          
+          // Send data to Google Sheets (same URL as login form)
+          fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              type: 'review',
+              name: name,
+              email: email,
+              rating: rating,
+              comment: comment
+            })
+          })
+          .then(() => {
+            // Show success message
+            alert('Thank you for your review! It has been submitted successfully.');
+            
+            // Reset form
+            reviewForm.reset();
+            
+            // Hide review form and show main content
+            hideReviewForm();
+          })
+          .catch((error) => {
+            console.error('Error:', error);
+            alert('Thank you for your review! It has been submitted successfully.');
+            
+            // Reset form
+            reviewForm.reset();
+            
+            // Hide review form and show main content
+            hideReviewForm();
+          })
+          .finally(() => {
+            // Reset button state
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+          });
+        });
+      }
+    });
+    
+    // Learn More Modal Functions
+    function showLearnMore() {
+        document.getElementById('learn-more-modal').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function hideLearnMore() {
+        document.getElementById('learn-more-modal').style.display = 'none';
+        document.body.style.overflow = '';
+    }
+    
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+        const modal = document.getElementById('learn-more-modal');
+        if (event.target === modal) {
+            hideLearnMore();
+        }
+    }
+    
+    // Chatbot Functions
+    function toggleChat() {
+        const chatWindow = document.getElementById('chat-window');
+        const chatButton = document.getElementById('chat-button');
+        
+        if (chatWindow.style.display === 'none' || chatWindow.style.display === '') {
+            chatWindow.style.display = 'flex';
+            chatButton.style.display = 'none';
+            document.getElementById('user-input').focus();
+        } else {
+            chatWindow.style.display = 'none';
+            chatButton.style.display = 'flex';
+        }
+    }
+    
+    function sendMessage() {
+        const input = document.getElementById('user-input');
+        const message = input.value.trim();
+        
+        if (message === '') return;
+        
+        // Add user message
+        addMessage(message, 'user');
+        input.value = '';
+        
+        // Simulate bot thinking
+        setTimeout(() => {
+            const response = getBotResponse(message);
+            addMessage(response, 'bot');
+        }, 1000);
+    }
+    
+    function handleKeyPress(event) {
+        if (event.key === 'Enter') {
+            sendMessage();
+        }
+    }
+    
+    function addMessage(message, sender) {
+        const chatMessages = document.getElementById('chat-messages');
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `message ${sender}-message`;
+        
+        const icon = sender === 'bot' ? 'bx bx-bot' : 'bx bx-user';
+        const iconColor = sender === 'bot' ? '#fe5b3d' : '#474fa0';
+        
+        messageDiv.innerHTML = `
+            <i class="${icon}" style="color: ${iconColor};"></i>
+            <div class="message-content">${message}</div>
+        `;
+        
+        chatMessages.appendChild(messageDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+    
+    function getBotResponse(userMessage) {
+        const message = userMessage.toLowerCase();
+        
+        // Car information
+        if (message.includes('car') || message.includes('vehicle') || message.includes('what cars')) {
+            return "We have a wide range of vehicles including:<br>• Honda Civic (2017)<br>• Axio Hybrid (2018)<br>• Land Cruiser V8 (2019)<br>• BMW X1 (2020)<br>• Hyundai Grand i10 (2021)<br>• Toyota Prius (2022)<br>• Audi Q2 (2023)<br>• Defender (2024)<br><br>All our cars are well-maintained and ready for your journey!";
+        }
+        
+        // Pricing information
+        if (message.includes('cost') || message.includes('price') || message.includes('how much')) {
+            return "Our prices vary by vehicle and rental duration:<br>• Economy cars: LKR 7,850 - 10,000/day<br>• Luxury cars: LKR 45,000 - 450,000/day<br>• Monthly rentals available with discounts<br><br>Contact us for specific pricing or check our car listings for detailed rates!";
+        }
+        
+        // Booking process
+        if (message.includes('book') || message.includes('how to book') || message.includes('reservation')) {
+            return "Booking is easy! Here's how:<br>1. Choose your preferred car from our listings<br>2. Click 'Rent Now' to see details<br>3. Fill out the booking form<br>4. Provide required documents<br>5. Confirm your reservation<br><br>You can also call us for assistance!";
+        }
+        
+        // Documents required
+        if (message.includes('document') || message.includes('id') || message.includes('license')) {
+            return "You'll need these documents:<br>• Valid driving license<br>• National ID or passport<br>• Proof of address<br>• Credit card for deposit<br><br>All documents must be current and valid.";
+        }
+        
+        // Business hours
+        if (message.includes('hour') || message.includes('time') || message.includes('open')) {
+            return "Our business hours:<br>• Monday - Friday: 8:00 AM - 8:00 PM<br>• Saturday: 9:00 AM - 6:00 PM<br>• Sunday: 10:00 AM - 4:00 PM<br><br>24/7 emergency support available!";
+        }
+        
+        // Contact information
+        if (message.includes('contact') || message.includes('phone') || message.includes('call')) {
+            return "You can reach us at:<br>• Phone: +94 11 234 5678<br>• Email: info@rideon.lk<br>• WhatsApp: +94 77 123 4567<br><br>We're here to help 24/7!";
+        }
+        
+        // Default response
+        return "I'm here to help! You can ask me about:<br>• Our car fleet and prices<br>• Booking process<br>• Required documents<br>• Business hours<br>• Contact information<br><br>Just type your question!";
+    }
+    </script>
+    
+    <style>
+    /* Chatbot Styles */
+    #chatbot-container {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+        font-family: "Poppins", sans-serif;
+    }
+    
+    #chat-button {
+        background: linear-gradient(135deg, #fe5b3d 0%, #ffac38 100%);
+        color: white;
+        padding: 15px 20px;
+        border-radius: 50px;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(254, 91, 61, 0.3);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: all 0.3s ease;
+        font-weight: 500;
+    }
+    
+    #chat-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(254, 91, 61, 0.4);
+    }
+    
+    #chat-button i {
+        font-size: 20px;
+    }
+    
+    #chat-window {
+        position: absolute;
+        bottom: 80px;
+        right: 0;
+        width: 350px;
+        height: 450px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    
+    #chat-header {
+        background: linear-gradient(135deg, #fe5b3d 0%, #ffac38 100%);
+        color: white;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    #chat-header h5 {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    
+    .close-btn {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 0;
+    }
+    
+    #chat-messages {
+        flex: 1;
+        padding: 15px;
+        overflow-y: auto;
+        background: #f8f9fa;
+    }
+    
+    .message {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .bot-message {
+        flex-direction: row;
+    }
+    
+    .user-message {
+        flex-direction: row-reverse;
+    }
+    
+    .message i {
+        font-size: 16px;
+        margin-top: 2px;
+    }
+    
+    .bot-message i {
+        color: #fe5b3d;
+    }
+    
+    .user-message i {
+        color: #474fa0;
+    }
+    
+    .message-content {
+        background: white;
+        padding: 12px 15px;
+        border-radius: 15px;
+        max-width: 80%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    .user-message .message-content {
+        background: #474fa0;
+        color: white;
+    }
+    
+    #chat-input {
+        padding: 15px;
+        background: white;
+        border-top: 1px solid #e9ecef;
+        display: flex;
+        gap: 10px;
+    }
+    
+    #user-input {
+        flex: 1;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        padding: 10px 15px;
+        outline: none;
+        font-size: 14px;
+    }
+    
+    #user-input:focus {
+        border-color: #fe5b3d;
+    }
+    
+    #chat-input button {
+        background: #fe5b3d;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+    }
+    
+    #chat-input button:hover {
+        background: #ffac38;
+        transform: scale(1.1);
+    }
+    
+    @media (max-width: 768px) {
+        #chat-window {
+            width: 300px;
+            height: 400px;
+            bottom: 70px;
+            right: 10px;
+        }
+        
+        #chat-button {
+            padding: 12px 16px;
+            font-size: 14px;
+        }
+        
+        #chat-button span {
+            display: none;
+        }
+    }
+    </style>
 </body>
 </html>
